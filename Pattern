@@ -1,0 +1,23 @@
+import java.util.*;
+public class Pattern {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		int curr_diff = n-1;
+		int number = 1;
+		for(int i=1;i<=n;i++)
+		{
+			for(int j=1;j<=i;j++)
+			{
+				System.out.print(number+" ");
+				number+=curr_diff;
+				curr_diff--;
+			}
+			number = i+1;
+			curr_diff = n-1;
+			System.out.println();
+		}
+	}
+
+}
