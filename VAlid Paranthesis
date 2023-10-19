@@ -1,0 +1,47 @@
+import java.util.*;
+
+public class valid_parenthesis {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		String parenthesis = sc.next();
+		int len = parenthesis.length();
+		if(len%2==1)
+		{
+			System.out.println("the given parenthesis is not a valid Parenthesis");
+		}
+		else
+		{
+			int left = 0;
+			int right = parenthesis.length()-1;
+			char expected_parenthesis;
+			while(right>=left)
+			{
+				expected_parenthesis = corresponding_close_parenthesis(parenthesis.charAt(left));
+				if(expected_parenthesis == '0')
+				{
+					System.out.println("Flase");
+					System.out.println("Given parenthesis is mismatched at position "+left+" and "+right);
+					break;
+				}
+				right--;
+				left++;
+			}
+			System.out.println("True");
+		}
+	}
+	
+	public static char corresponding_close_parenthesis(char ch)
+	{
+		char corressponding_parenthesis;
+		if(ch=='(')
+			corressponding_parenthesis = ')';
+		else if(ch=='{')
+			corressponding_parenthesis = '}';
+		else if(ch=='[')
+			corressponding_parenthesis = ']';
+		else
+			corressponding_parenthesis = '0';
+		return corressponding_parenthesis;
+	}
+}
