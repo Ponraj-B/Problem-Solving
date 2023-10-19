@@ -1,3 +1,6 @@
+// " HI HELLO " -> Input
+// " IH OLLEH " -> Output
+
 class Solution {
     public String reverseWords(String s) {
         String words[] = s.split(" ");
