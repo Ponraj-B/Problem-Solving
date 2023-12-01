@@ -1,1 +1,1 @@
-# JAVA Problem-Solving
+# Problem-Solving
